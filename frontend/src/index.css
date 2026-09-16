@@ -1,0 +1,141 @@
+:root {
+  color-scheme: light;
+  --surface-1: #fcfcfb;
+  --page: #f9f9f7;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #898781;
+  --border: rgba(11, 11, 11, 0.1);
+  --danger-bg: #fdecea;
+  --danger-border: #e34948;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --surface-1: #1a1a19;
+    --page: #0d0d0d;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted: #898781;
+    --border: rgba(255, 255, 255, 0.1);
+    --danger-bg: #2a1614;
+    --danger-border: #e66767;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 14px;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.app-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+}
+
+.app-header p {
+  margin: 0 0 24px;
+  color: var(--text-secondary);
+  max-width: 60ch;
+}
+
+.app-body {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.controls {
+  flex: 1 1 280px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.results {
+  flex: 2 1 480px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panel {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 0;
+}
+
+.panel legend,
+.panel h2 {
+  padding: 0 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.chart-panel h2 {
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.control-row {
+  display: block;
+  margin: 12px 0;
+}
+
+.control-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.control-value {
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}
+
+.control-row input[type="range"] {
+  width: 100%;
+}
+
+.control-row select {
+  width: 100%;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface-1);
+  color: var(--text-primary);
+}
+
+.error-banner {
+  background: var(--danger-bg);
+  border-color: var(--danger-border);
+  color: var(--text-primary);
+}
+
+.error-banner p {
+  margin: 8px 0 0;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
